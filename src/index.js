@@ -29,7 +29,7 @@ app.get("/chatgpt/.well-known/ai-plugin.json", (req, res) => {
   });
 });
 
-app.get("/chagpt/openai.yaml", (req, res) => {
+app.get("/chatgpt/openai.yaml", (req, res) => {
   const filePath = path.join(__dirname, "/chatgpt/openai.yaml");
 
   res.sendFile(filePath, function (err) {
