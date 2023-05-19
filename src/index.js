@@ -1,9 +1,13 @@
-import http from 'http';
+import express from "express";
+import cors from "cors";
+import movieRoutes from "./routes/route.js";
 
-const server = http.createServer((req, res) => {
-  res.end('Hello from the server');
-}).listen(4001);
+const app = express();
 
-console.log('Server is up and running');
+app.use(cors());
+app.use(express.json());
+app.use("/api/v1", movieRoutes);
 
-export default server;
+app.listen(5000, () => {
+  console.log(`🚀 Server is ready at http://localhost:5000`);
+});
