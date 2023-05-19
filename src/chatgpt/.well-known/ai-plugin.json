@@ -9,7 +9,7 @@
     },
     "api": {
       "type": "openapi",
-      "url": "http://localhost:5000/chatgpt/openapi.yaml",
+      "url": "https://calm-blue-ladybug-tie.cyclic.app/chatgpt/openai.yaml",
       "is_user_authenticated": false
     },
     "logo_url": "https://res.cloudinary.com/esconnect/image/upload/v1684403208/logo_owh7qg.jpg",

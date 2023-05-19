@@ -4,7 +4,7 @@ info:
   description: Plugin for listing and checking the movies using ChatGPT.
   version: "v1"
 servers:
-  - url: http://localhost:5000
+  - url: https://calm-blue-ladybug-tie.cyclic.app
 paths:
   /api/v1/movies:
     get:
