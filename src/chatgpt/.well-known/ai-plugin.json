@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Movies Plugin (no auth)",
+    "name_for_model": "movies_plugin",
+    "description_for_human": "Plugin for searching and getting the list of movies to watch",
+    "description_for_model": "Plugin for searching and getting the list of movies to watch",
+    "auth": {
+      "type": "none"
+    },
+    "api": {
+      "type": "openapi",
+      "url": "http://localhost:5000/chatgpt/openapi.yaml",
+      "is_user_authenticated": false
+    },
+    "logo_url": "https://res.cloudinary.com/esconnect/image/upload/v1684403208/logo_owh7qg.jpg",
+    "contact_email": "emmy66418@gmail.com",
+    "legal_info_url": "http://example.com/legal"
+  }

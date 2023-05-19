@@ -1,0 +1,130 @@
+openapi: 3.0.1
+info:
+  title: Get a Movie name by using a Plugin
+  description: Plugin for listing and checking the movies using ChatGPT.
+  version: "v1"
+servers:
+  - url: http://localhost:5000
+paths:
+  /api/v1/movies:
+    get:
+      operationId: getMovies
+      summary: Get the list of movies
+      parameters:
+        - in: path
+          name: movies
+          schema:
+            type: string
+          required: true
+          description: The list of movies inside the idmb application
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getMoviesResponse"
+        "500":
+          description: Error making request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /api/v1/movies/{movieId}:
+    get:
+      operationId: getMoviesById
+      summary: Get a movie from the list of movies using id
+      parameters:
+        - in: path
+          name: movieId
+          schema:
+            type: string
+          required: true
+          description: Get a movie from the list of the idmb application movies using id
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getMoviesByIdResponse"
+        "500":
+          description: Error making request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+  /api/v1/topMovies:
+    get:
+      operationId: getTopRatedMovies
+      summary: Get the top rated movies from idmb application
+      parameters:
+        - in: path
+          name: topMovies
+          schema:
+            type: string
+          description: Get the top rated movies from idmb application
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getTopRatedMoviesResponse"
+        "500":
+          description: Error making request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/errorResponse"
+
+components:
+  schemas:
+    getMoviesResponse:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+          movie:
+            type: string
+          rating:
+            type: number
+          image:
+            type: string
+          imdb_url:
+            type: string
+    getMoviesByIdResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+        movie:
+          type: string
+        rating:
+          type: number
+        image:
+          type: string
+        imdb_url:
+          type: string
+    getTopRatedMoviesResponse:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+          movie:
+            type: string
+          rating:
+            type: number
+          image:
+            type: string
+          imdb_url:
+            type: string
+    errorResponse:
+      type: object
+      properties:
+        error:
+          type: string
