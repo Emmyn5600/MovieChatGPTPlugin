@@ -3,14 +3,22 @@
   "version": "1.0.0",
   "description": "A chatGPT movie plugin",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel index.js -d dist",
+    "dev": "nodemon — exec babel-node ./src/index.js"
   },
   "author": "emmanuel NSABIMANA",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.8",
-    "@babel/preset-env": "^7.21.5"
+    "@babel/preset-env": "^7.21.5",
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
   }
 }
