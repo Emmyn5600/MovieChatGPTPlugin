@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "babel index.js -d dist",
+    "start": "node src/index.js",
+    "build": "babel src -d build",
     "dev": "nodemon — exec babel-node ./src/index.js"
   },
   "author": "emmanuel NSABIMANA",
