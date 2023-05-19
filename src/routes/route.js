@@ -1,9 +1,10 @@
 import express from "express";
 
-import { fetchAllMovies } from "../controllers/controller.js";
+import { fetchAllMovies, fetchByMovieId } from "../controllers/controller.js";
 
 const router = express.Router();
 
 router.get("/movies", fetchAllMovies);
+router.get("/movies/:id", fetchByMovieId);
 
 export default router;
