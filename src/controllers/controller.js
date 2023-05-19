@@ -28,3 +28,13 @@ export const fetchByMovieId = async (req, res) => {
     }
   }
 };
+
+export const getTopRatedMovies = async (req, res) => {
+  try {
+    const response = await axios.get("https://dummyapi.online/api/movies");
+    const movies = response.data.filter((movie) => movie.rating >= 9);
+    res.json(movies);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch movies" });
+  }
+};
